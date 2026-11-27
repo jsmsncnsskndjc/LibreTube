@@ -106,8 +106,6 @@ class AboutActivity : BaseActivity() {
     }
 
     companion object {
-        // kept because the player menu links to it (AbstractPlayerHostActivity)
-        const val DONATE_URL = "https://github.com/jsmsncnsskndjc/LibreTube#donate"
         private const val WEBSITE_URL = "https://github.com/jsmsncnsskndjc/LibreTube"
         const val GITHUB_URL = "https://github.com/jsmsncnsskndjc/LibreTube"
         private const val LICENSE_URL = "https://gnu.org/"

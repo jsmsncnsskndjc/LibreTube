@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_by">by عبود SY</string>
     <string name="instances">إختر…</string>
     <string name="customInstance">مخصص</string>
     <string name="registered">سجَّلت. تستطيع الآن الاشتراك بالقنوات.</string>
@@ -428,7 +429,6 @@
     <string name="sb_invalid_segment">بداية المقطع أو نهايته غير صالحة</string>
     <string name="contribute_to_sponsorblock">المساهمة في حاجب الاعلانات</string>
     <string name="sponsorblock_user_id">معرّف مستخدم حاجب الاعلانات</string>
-    <string name="donate">التبرع</string>
     <string name="music_artists">YT الموسيقى: الفنانين</string>
     <string name="no_fullscreen_resolution">لا توجد دقة لملء الشاشة</string>
     <string name="same_as_fullscreen">مطابق لإعداد الشاشة الكاملة</string>
