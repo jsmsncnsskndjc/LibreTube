@@ -339,7 +339,7 @@ object PreferenceHelper {
     }
 
     fun getTrendingRegion(context: Context): String {
-        val regionPref = PreferenceHelper.getString(PreferenceKeys.REGION, "sys")
+        val regionPref = PreferenceHelper.getString(PreferenceKeys.REGION, "SA")
 
         // get the system default country if auto region selected
         return if (regionPref == "sys") {
