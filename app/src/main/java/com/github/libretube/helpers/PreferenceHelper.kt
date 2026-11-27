@@ -339,7 +339,12 @@ object PreferenceHelper {
     }
 
     fun getTrendingRegion(context: Context): String {
-        val regionPref = PreferenceHelper.getString(PreferenceKeys.REGION, "SA")
+        // the user never picked a region: use the admin panel's default region
+        val regionPref = if (settings.contains(PreferenceKeys.REGION)) {
+            PreferenceHelper.getString(PreferenceKeys.REGION, "SA")
+        } else {
+            PreferenceHelper.getString(S2TubeRemoteConfig.KEY_REMOTE_REGION, "SA")
+        }
 
         // get the system default country if auto region selected
         return if (regionPref == "sys") {

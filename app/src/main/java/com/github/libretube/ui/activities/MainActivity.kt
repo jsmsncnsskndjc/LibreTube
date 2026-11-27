@@ -51,6 +51,7 @@ import com.github.libretube.helpers.NavBarHelper
 import com.github.libretube.helpers.NavigationHelper
 import com.github.libretube.helpers.NetworkHelper
 import com.github.libretube.helpers.PreferenceHelper
+import com.github.libretube.helpers.S2TubeRemoteConfig
 import com.github.libretube.helpers.ThemeHelper
 import com.github.libretube.obj.ChannelIdentifier
 import com.github.libretube.parcelable.PlayerData
@@ -129,6 +130,9 @@ class MainActivity : AbstractPlayerHostActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // S2 Tube remote config: maintenance / announcement from the admin panel
+        S2TubeRemoteConfig.showStartupNotices(this)
 
         // manually apply additional padding for edge-to-edge compatibility
         // see https://developer.android.com/develop/ui/views/layout/edge-to-edge
