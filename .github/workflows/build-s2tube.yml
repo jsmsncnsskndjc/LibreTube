@@ -17,11 +17,27 @@ jobs:
           distribution: "temurin"
           cache: "gradle"
 
+      - name: Restore S2 icons
+        run: |
+          python3 - <<'EOF'
+          import base64, os
+          with open('s2-assets/icons.b64') as fh:
+              for line in fh:
+                  line = line.strip()
+                  if not line:
+                      continue
+                  rel, b64 = line.split('\t', 1)
+                  os.makedirs(os.path.dirname(rel), exist_ok=True)
+                  with open(rel, 'wb') as out:
+                      out.write(base64.b64decode(b64))
+          print('icons restored')
+          EOF
+
       - name: Check Gradle
         run: ./gradlew --version
 
       - name: Build debug APK
-        run: ./gradlew assembleDebug --stacktrace
+        run: ./gradlew assembleDebug --stacktrace --no-build-cache
 
       - name: Upload APK
         uses: actions/upload-artifact@v6
